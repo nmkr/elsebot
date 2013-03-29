@@ -1,9 +1,0 @@
-{% extends "layout" %}
-{% block content %}
-	<div class="content">
-		<h2>{{ 'Orders' | translate }}</h2>
-		{% assign sortable_collection = orders %}
-		{% assign sortable_columns = columns %}
-		{% include 'macros/sortable' %}
-	</div>
-{% endblock %}
