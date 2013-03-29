@@ -1,0 +1,72 @@
+<div id="{{ table.id }}" class="dashboard-table">
+	<form action="{{ route }}" method="post">
+		<div class="dashboard-table-actions">
+			<ul>
+				{% for action in table.actions %}
+				{% if action.type == 'button' %}
+				<li class="action-{{ action.type }}"><a href="{{ action.url | urlFor }}" title="{{ action.title }}" class="btn blue loader-link">{{ action.title }}</a></li>
+				{% elsif action.type == 'select' %}
+				<li class="action-{{ action.type }}">
+					<select name="{{ action.name }}" class="autosubmit{{ action.class }}">
+					{% for option in action.options %}
+						{% if option.name == action.default %}
+						<option value="{{ option.name }}" selected>{{ option.value }}</option> 
+						{% else %}
+						<option value="{{ option.name }}">{{ option.value }}</option> 
+						{% endif %}
+					{% endfor %}
+					</select>
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+			<div class="clear"></div>
+			<input type="submit" name="filter" value="Filter">
+		</div>
+		{% if table.data != empty %}
+		<table class="dashboard-table-data sortable">
+			<thead>
+				<tr>
+					<th class="column-checkbox"></th>
+					{% for column in table.columns %}
+					{% if column.sort %}
+					<th data-sort="{{ column.sort }}" class="column-{{column.name}} column-sortable">{{ column.title | translate }}</th>
+					{% else %}
+					<th class="column-{{column.name}}">{{ column.title | translate }}</th>
+					{% endif %}
+					{% endfor %}
+				</tr>
+			</thead>
+			<tbody>
+			{% for item in table.data %}
+				<tr>
+					<td class="column-checkbox"><input class="item-checkbox" type="checkbox" name="item[]" value="{{ item.id }}" /></td>
+					{% for column in table.columns %}
+					{% if column.format == 'date' %}
+					<td class="column-{{column.name}}">{{ item | key: column.name | date: "%d.%m.%Y" }}</td>
+					{% elsif column.format == 'edit' %}
+					<td class="column-{{column.name}} column-edit">
+						<div>
+							<a href="{{ column.delete | urlFor: item.id }}" class="delete typicn times"></a>
+							<a href="{{ column.single | urlFor: item.id }}" class="loader-link edit">{{ item | key: column.name }}</a>
+						</div>
+					</td>
+					{% else %}
+					<td class="column-{{column.name}}">{{ item | key: column.name }}</td>
+					{% endif %}
+					{% endfor %}
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		<table class="dashboard-table-data no-data sortable">
+			<tbody>
+				<tr>
+					<td>{{ 'No pages found' | translate }}</td>
+				</tr>
+			</tbody>
+		</table>
+		{% endif %}
+	</form>
+</div>

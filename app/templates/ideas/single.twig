@@ -1,0 +1,35 @@
+{% extends 'site.twig' %}
+
+{% block content %}
+	<div id="ideas">
+	{% if idea != '' %}
+		{% include 'ideas/idea.twig' %}
+	{% else %}
+		<h3>The idea you are looking for no longer exist or didn't exist before.</h3>
+	{% endif %}
+	</div>
+
+	{% if ideas != '' %}
+	<div class="sort-paginate">
+		<div class="sort">
+			Sort by: <a href="{{ urlFor('latest_ideas') }}">Latest</a> | <a href="{{ urlFor('mostrated_ideas') }}">Most Rated</a>
+		</div>
+		<div class="pagination">
+			{{ pagination }}
+		</div>
+	</div>
+	{% endif %}
+	{% if auth.isLoggedIn() %}
+	<div id="addyouridea">
+		<h3><span>Add your Comment</span></h3>
+		<form action="{{ urlFor('idea_save') }}#addyouridea" method="post" accept-charset="utf-8" id="idea-form">
+			<p>
+				<label for="comment">Comment <em class="character">220 characters left</em></label>
+				<textarea id="comment" name="comment" rows="4" cols="30"></textarea>
+			</p>
+
+			<div id="submit-holder"><input type="submit" value="Add Idea" class="button" /></div>
+		</form>
+	</div>
+	{% endif %}
+{% endblock %}

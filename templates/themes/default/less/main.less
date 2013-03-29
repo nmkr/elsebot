@@ -1,0 +1,348 @@
+/*
+ * Default Theme
+ */
+
+/* ==========================================================================
+   Import resources
+   ========================================================================== */
+
+@import "variables.less";
+@import "extras.less";
+@import "mixins.less";
+
+@font-face {
+    font-family: 'Typicons';
+    src: url('fonts/typicons-regular-webfont.eot');
+    src: url('fonts/typicons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/typicons-regular-webfont.woff') format('woff'),
+         url('fonts/typicons-regular-webfont.ttf') format('truetype'),
+         url('fonts/typicons-regular-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('fonts/OpenSans-Bold-webfont.eot');
+    src: url('fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /*
+    @font-face {
+        font-family: 'Typicons';
+        src: url('fonts/typicons-regular-webfont.svg') format('svg');
+    }
+
+    @font-face {
+        font-family: 'OpenSansRegular';
+        src: url('fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    }
+
+    @font-face {
+        font-family: 'OpenSansBold';
+        src: url('fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+    }
+    */
+}
+
+
+html{
+    overflow: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'OpenSansRegular';
+    font-size: 15px;
+    line-height: 1.6em;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+p{
+    margin-bottom: 1.6em;
+}
+
+b{
+    font-family: 'OpenSansBold';
+}
+
+a{
+    &.typicn{
+        text-decoration: none;
+        font-size: 24px;
+        color: #000;
+    }
+}
+
+h1{
+    font-size: 2em;
+}
+
+h2{
+    font-size: 1.6em; 
+    margin-bottom: 1em;
+}
+
+h3{
+    font-size: 1.2em;
+}
+
+nav#dashboard{
+    position: fixed;
+    width: 100px;
+    height: 100%;
+    background: #111;
+
+    ul#navigation{
+        margin: 0;
+        padding: 0;
+        li{
+            display: block;
+            a{
+                display: block;
+                width: 100px;
+                height: 100px;
+                font-family: 'Typicons';
+                font-size: 48px;
+                line-height: 112px;
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+
+                &:hover{
+                    background: rgb(14, 146, 187);
+                }
+            }
+        }
+    }
+}
+
+#container{
+    position: relative;
+    left: 100px;
+    margin-right: 100px;
+    bottom:0;
+    top:0;
+    right:0;
+}
+
+.dashboard-section{
+
+    header{
+        margin-bottom: 1.5em;
+        padding: 1.5em 3em;
+        border-bottom: 1px solid @lineColor;
+    }
+
+    .content-wrap{
+        padding: 1.5em 3em;
+
+        .content{
+            &.with-sidebar{
+                float: left;
+                width: 62%;
+            }
+        }
+
+        .sidebar{
+            float: left;
+            width: 34%;
+            margin-left: 4%;
+
+             .sidebar-inner{
+                padding: 1.5em 3em;
+            }
+        }
+    }
+
+    footer{
+        margin-top: 1.5em;
+        padding: 1.5em 3em;
+        border-top: 1px solid @lineColor;
+    }
+}
+
+input[type="text"], 
+textarea{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid @lineColor;
+    padding: 1em;
+    font-family: 'OpenSansRegular';
+    font-size: 15px;
+    line-height: 1.6em;
+
+    &:focus{
+        border: 1px solid rgb(14, 146, 187);
+        outline: none;
+    }
+}
+
+textarea{
+    resize: vertical;
+}
+
+.editorial{
+    border: 1px solid @lineColor;
+
+    &.focused{
+        border: 1px solid rgb(14, 146, 187);
+        outline: none;
+    }
+
+    .editorial-buttons{
+        border-bottom: 1px solid @lineColor;
+
+        .button{
+            display: inline-block;
+            padding: 0.625em 0.625em;
+            border-right: 1px solid @lineColor;
+            font-size: 24px;
+            line-height: 1em;
+            -webkit-transition: background-color 100ms ease-in;
+
+            &:hover,
+            &.active{
+                background: rgb(14, 146, 187);
+                color: #fff;
+            }
+        }
+    }
+
+    .editorial-element{
+        width: 100%;
+        min-height: 10em;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 1em;
+        -moz-user-select: text;
+        -webkit-user-select: text;
+        -ms-user-select: text;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+table{
+    width: 100%;
+    border: 0;
+
+    thead{
+        th{
+            text-align: left;
+            border: 1px solid #000;
+        }
+    }
+
+    tbody{
+        td{
+            border: 1px solid #000;
+        }
+    }
+
+    &.dashboard-table{
+        thead{
+            th{
+                padding: 1em;
+                font-size: 1.200em;
+                border: 1px solid @lineColor;
+            }
+        }
+
+        tbody{
+            tr{
+                &.selected{
+                    background: rgb(14, 146, 187);
+                    color: #fff;
+
+                    td{
+                        border: 1px solid rgb(14, 146, 187);
+                    }
+                }
+
+                td{
+                    padding: 1.200em;
+                    border: 1px solid @lineColor;
+
+                    &.column-checkbox{
+                        display: none;
+                    }
+
+                    &.column-edit{
+                        width: 48px;
+                        padding: 0;
+                        a{
+                            display: block;
+                            padding: 1em;
+                            &:hover{
+                                background: rgb(14, 146, 187);
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    &.column-id{
+                        width: 32px;
+                    }
+
+                    &.column-created_at,
+                    &.column-permalink{
+                        width: 15%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.clear{
+    font:0/0 serif;
+    zoom: 1; /*IE7 only - because this theme doesn't use floats in other browsers*/
+    //*zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both");
+    &:before,
+    &:after { 
+        display: block; 
+        overflow: hidden; 
+        height: 0;
+        content: "\0020";
+    }
+
+    &:after {
+        clear: both;
+    }
+}

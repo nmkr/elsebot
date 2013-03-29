@@ -1,0 +1,10 @@
+Array
+(
+    [filter-status] => deleted
+    [bulk-action] => delete
+    [item] => Array
+        (
+            [0] => 16
+        )
+
+)

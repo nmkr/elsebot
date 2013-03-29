@@ -1,0 +1,21 @@
+<form action="{{ form_action }}" method="post" accept-charset="utf-8">
+	{% for item in form_items %}
+		{% for input in form_inputs %}
+		{% if input.type == 'text' %}
+		<p>
+			<input type="text" name="input-{{ input.name }}" value="{{ item | key: input.name }}" placeholder="{{ input.placeholder }}">
+		</p>
+		{% elsif input.type == 'textarea' %}
+		<p>
+			<textarea name="input-{{ input.name }}" spellcheck="false" rows="12">{{ item | key: input.name }}</textarea>
+		</p>
+		{% elsif input.type == 'editor' %}
+		<p>
+			<div class="editorial">
+				<textarea class="editorial-input" name="input-{{ input.name }}" spellcheck="false" rows="12">{{ item | key: input.name }}</textarea>
+			</div>
+		</p>
+		{% endif %}
+		{% endfor %}
+	{% endfor %}
+</form>

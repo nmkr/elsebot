@@ -1,0 +1,32 @@
+{% include 'header' %}
+
+<section id="pages" class="dashboard-section">
+
+<header>
+	<p>{{ 'Logged in as: ' | translate }}<strong>{{ user.username }}</strong></p>
+</header>
+
+<div class="content-wrap">
+
+	<div class="content with-sidebar">	
+
+		<h2>{{ 'Edit page' | translate }}</h2>
+
+		{% assign form_items = page %}
+		{% assign form_inputs = inputs %}
+		{% include 'macros/form' %}
+
+	</div>
+
+	<div class="sidebar">
+		{% include 'macros/upload' %}
+	</div>
+
+</div>
+
+
+<div class="clear"></div>
+
+{% include 'footer' %}
+
+</section>
