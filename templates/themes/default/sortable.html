@@ -1,0 +1,19 @@
+<table>
+	<thead>
+		<tr>
+			{% for column in sortable_columns %}
+			<td class="column-{{column.name}}">{{ column.name | translate }}</td>
+			{% endfor %}
+		</tr>
+	</thead>
+	<tbody>
+	{% for item in sortable_collection %}
+		<tr>
+			{% for column in sortable_columns %}
+			<td>{{ item | key: column.name }}</td>
+			{% endfor %}
+			<td>{{  }}
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>

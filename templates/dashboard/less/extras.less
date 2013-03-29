@@ -1,0 +1,222 @@
+@font-face {
+	font-family: 'Typicons';
+	src: url('fonts/typicons-regular-webfont.eot');
+	src: url('fonts/typicons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/typicons-regular-webfont.woff') format('woff'),
+		url('fonts/typicons-regular-webfont.ttf') format('truetype'),
+		url('fonts/typicons-regular-webfont.svg#TypiconsRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.typicn {
+	font-family: "Typicons", sans-serif;
+	/* Reduce blur on icons in chrome, opera, safari and ios. */
+	/* This is hacky & bad. Maybe possible for firefox, not sure yet. */
+	-webkit-font-smoothing: antialiased;	-o-transform: scale(1); 
+}
+
+.location:before {content: "A";}
+.phone:before {content: "B";}
+.home:before {content: "C";}
+.camera:before {content: "D";}
+.left:before {content: "E";}
+.right:before {content: "F";}
+.up:before {content: "G";}
+.down:before {content: "H";}
+.refresh:before {content: "I";}
+.sync:before {content: "J";}
+.loop:before {content: "K";}
+.repeat:before {content: "L";}
+.shuffle:before {content: "M";}
+.rss:before {content: "N";}
+.cog:before {content: "O";}
+.spanner:before {content: "P";}
+.barChart:before {content: "Q";}
+.pieChart:before {content: "R";}
+.lineChart:before {content: "S";}
+.views:before {content: "T";}
+.zoomIn:before {content: "V";}
+.zoomOut:before {content: "U";}
+.export:before {content: "W";}
+.user:before {content: "X";}
+.group:before {content: "Y";}
+.microphone:before {content: "Z";}
+.globe:before {content: "a";}
+.thumbsUp:before {content: "b";}
+.thumbsDown:before {content: "c";}
+.tag:before {content: "d";}
+.tab:before {content: "e";}
+.warning:before {content: "f";}
+.tick:before {content: "g";}
+.beta:before {content: "h";}
+.unlock:before {content: "i";}
+.lock:before {content: "j";}
+.eject:before {content: "k";}
+.move:before {content: "l";}
+.expand:before {content: "m";}
+.cancel:before {content: "n";}
+.power:before {content: "o";}
+.compass:before {content: "p";}
+.radar:before {content: "q";}
+.directions:before {content: "r";}
+.pin:before {content: "s";}
+.mute:before {content: "t";}
+.volume:before {content: "u";}
+.world:before {content: "v";}
+.write:before {content: "w";}
+.minus:before {content: "x";}
+.equals:before {content: "y";}
+.feed:before {content: "z";}
+.batteryNone:before {content: "0";}
+.batteryLow:before {content: "1";}
+.batteryMid:before {content: "2";}
+.batteryHigh:before {content: "3";}
+.batteryPower:before {content: "4";}
+.plus:before {content: "5";}
+.times:before {content: "6";}
+.next:before {content: "7";}
+.previous:before {content: "8";}
+.edit:before {content: "";}
+.cut:before {content: "'";}
+.anchor:before {content: "(";}
+.bookmark:before {content: ")";}
+.music:before {content: "*";}
+.puzzle:before {content: "+";}
+.archive:before {content: ",";}
+.mobile:before {content: "-";}
+.contrast:before {content: ".";}
+.brightness:before {content: "/";}
+.flag:before {content: "{";}
+.info:before {content: "|";}
+.unknown:before {content: "}";}
+.chat:before {content: "~";}
+.mail:before {content: "[";}
+.message:before {content: "\005C";}
+.delete:before {content: "6";}
+.backspace:before {content: "^";}
+.infinity:before {content: "_";}
+.key:before {content: "$";}
+.time:before {content: "%";}
+.grid:before {content: "\0022";}
+.list:before {content: "\0023";}
+.heart:before {content: ";";}
+.star:before {content: "=";}
+.back:before {content: "?";}
+.forward:before {content: "@";}
+.bold:before {content: "s";}
+
+@font-face {
+	font-family: 'Typograms';
+	src: url('fonts/typograms-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.typogram {
+	font-family: "Typograms", sans-serif;
+	/* Reduce blur on icons in chrome, opera, safari and ios. */
+	/* This is hacky & bad. Maybe possible for firefox, not sure yet. */
+	-webkit-font-smoothing: antialiased;	-o-transform: scale(1); 
+
+	&.bold:before {content: "\F000";}
+	&.italic:before {content: "\F001";}
+	&.underline:before {content: "\F002";}
+	&.orderedlist:before {content: "\F002";}
+}
+
+/* Have ideas for improving this CSS for the general community? Submit your changes at: https://github.com/Valums-File-Uploader/file-uploader */
+.qq-uploader {
+	position: relative;
+	width: 100%;
+}
+.qq-upload-button {
+	display: block;
+	/*or inline-block*/
+	width: 105px;
+	padding: 7px 0;
+	text-align: center;
+	background: #880000;
+	border-bottom: 1px solid #DDD;
+	color: #FFF;
+}
+.qq-upload-button-hover {
+	background: #CC0000;
+}
+.qq-upload-button-focus {
+	outline: 1px dotted #000000;
+}
+.qq-upload-drop-area, .qq-upload-extra-drop-area {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 30px;
+	z-index: 2;
+	background: #FF9797;
+	text-align: center;
+}
+.qq-upload-drop-area span {
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin-top: -8px;
+	font-size: 16px;
+}
+.qq-upload-extra-drop-area {
+	position: relative;
+	margin-top: 50px;
+	font-size: 16px;
+	padding-top: 30px;
+	height: 20px;
+	min-height: 40px;
+}
+.qq-upload-drop-area-active {
+	background: #FF7171;
+}
+.qq-upload-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.qq-upload-list li {
+	margin: 0;
+	padding: 9px;
+	line-height: 15px;
+	font-size: 16px;
+	background-color: #FFF0BD;
+}
+.qq-upload-file, .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
+	margin-right: 12px;
+}
+.qq-upload-file {
+}
+.qq-upload-spinner {
+	display: inline-block;
+	background: url("loading.gif");
+	width: 15px;
+	height: 15px;
+	vertical-align: text-bottom;
+}
+.qq-upload-size, .qq-upload-cancel {
+	font-size: 12px;
+	font-weight: normal;
+}
+.qq-upload-failed-text {
+	display: none;
+}
+.qq-upload-fail .qq-upload-failed-text {
+	display: inline;
+}
+.qq-upload-list li.qq-upload-success {
+	background-color: #5DA30C;
+	color: #FFFFFF;
+}
+.qq-upload-list li.qq-upload-fail {
+	background-color: #D60000;
+	color: #FFFFFF;
+}
+
+
